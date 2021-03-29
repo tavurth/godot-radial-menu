@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/radial_menu/RadialMenu.gd" type="Script" id=1]
 [ext_resource path="res://icons/flip.svg" type="Texture" id=2]
 [ext_resource path="res://icons/flip-hover.svg" type="Texture" id=3]
+[ext_resource path="res://ExampleScene.gd" type="Script" id=4]
 
 [node name="ExampleScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RadialMenu2" type="Container" parent="."]
+[node name="RadialMenu" type="Container" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.896851
@@ -22,7 +24,7 @@ __meta__ = {
 }
 width_min = 0.318
 
-[node name="TextureButton8" type="TextureButton" parent="RadialMenu2"]
+[node name="TextureButton8" type="TextureButton" parent="RadialMenu"]
 margin_left = 351.738
 margin_top = 368.262
 margin_right = 399.738
@@ -36,11 +38,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton9" type="TextureButton" parent="RadialMenu2"]
-margin_left = 509.576
-margin_top = 423.492
-margin_right = 557.576
-margin_bottom = 471.492
+[node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
+margin_left = 471.205
+margin_top = 423.971
+margin_right = 519.205
+margin_bottom = 471.971
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -50,11 +52,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton10" type="TextureButton" parent="RadialMenu2"]
-margin_left = 651.167
-margin_top = 334.525
-margin_right = 699.167
-margin_bottom = 382.525
+[node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
+margin_left = 598.53
+margin_top = 389.854
+margin_right = 646.53
+margin_bottom = 437.854
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -64,11 +66,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton11" type="TextureButton" parent="RadialMenu2"]
-margin_left = 669.89
-margin_top = 168.354
-margin_right = 717.89
-margin_bottom = 216.354
+[node name="TextureButton11" type="TextureButton" parent="RadialMenu"]
+margin_left = 674.138
+margin_top = 281.875
+margin_right = 722.138
+margin_bottom = 329.875
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -78,11 +80,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton12" type="TextureButton" parent="RadialMenu2"]
-margin_left = 551.646
-margin_top = 50.1096
-margin_right = 599.646
-margin_bottom = 98.1099
+[node name="TextureButton12" type="TextureButton" parent="RadialMenu"]
+margin_left = 662.649
+margin_top = 150.56
+margin_right = 710.649
+margin_bottom = 198.56
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -92,11 +94,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton13" type="TextureButton" parent="RadialMenu2"]
-margin_left = 385.475
-margin_top = 68.8329
-margin_right = 433.475
-margin_bottom = 116.833
+[node name="TextureButton13" type="TextureButton" parent="RadialMenu"]
+margin_left = 569.44
+margin_top = 57.3509
+margin_right = 617.44
+margin_bottom = 105.351
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -106,11 +108,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton14" type="TextureButton" parent="RadialMenu2"]
-margin_left = 296.508
-margin_top = 210.424
-margin_right = 344.508
-margin_bottom = 258.424
+[node name="TextureButton14" type="TextureButton" parent="RadialMenu"]
+margin_left = 438.125
+margin_top = 45.8619
+margin_right = 486.125
+margin_bottom = 93.8622
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -119,3 +121,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="hovered" from="RadialMenu" to="." method="_on_RadialMenu_hovered"]
+[connection signal="selected" from="RadialMenu" to="." method="_on_RadialMenu_selected"]
+[connection signal="pressed" from="RadialMenu/TextureButton8" to="." method="_on_TextureButton8_pressed"]

@@ -143,9 +143,10 @@ func _on_selected(index: int):
 
 	if child is Control:
 		child.grab_focus()
-		
+
 	if child is BaseButton:
 		child.set_pressed(true)
+		child.emit_signal("pressed")
 
 	self.emit_signal("selected", child)
 

@@ -9,12 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="RadialMenu" parent="." instance=ExtResource( 1 )]
-width_min = 0.293
+width_max = 0.829
+width_min = 0.486
 
 [node name="TextureButton" type="TextureButton" parent="RadialMenu"]
-margin_left = 677.504
+margin_left = 680.32
 margin_top = 232.0
-margin_right = 725.504
+margin_right = 728.32
 margin_bottom = 280.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
@@ -26,10 +27,10 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="RadialMenu"]
-margin_left = 546.56
-margin_top = 51.771
-margin_right = 594.56
-margin_bottom = 99.771
+margin_left = 643.59
+margin_top = 118.957
+margin_right = 691.59
+margin_bottom = 166.957
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -40,10 +41,10 @@ __meta__ = {
 }
 
 [node name="TextureButton3" type="TextureButton" parent="RadialMenu"]
-margin_left = 334.688
-margin_top = 120.612
-margin_right = 382.688
-margin_bottom = 168.612
+margin_left = 547.43
+margin_top = 49.0928
+margin_right = 595.43
+margin_bottom = 97.0928
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -54,10 +55,10 @@ __meta__ = {
 }
 
 [node name="TextureButton4" type="TextureButton" parent="RadialMenu"]
-margin_left = 334.688
-margin_top = 343.388
-margin_right = 382.688
-margin_bottom = 391.388
+margin_left = 428.57
+margin_top = 49.0928
+margin_right = 476.57
+margin_bottom = 97.0928
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -68,10 +69,80 @@ __meta__ = {
 }
 
 [node name="TextureButton5" type="TextureButton" parent="RadialMenu"]
-margin_left = 546.56
-margin_top = 412.229
-margin_right = 594.56
-margin_bottom = 460.229
+margin_left = 332.41
+margin_top = 118.957
+margin_right = 380.41
+margin_bottom = 166.957
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton6" type="TextureButton" parent="RadialMenu"]
+margin_left = 295.68
+margin_top = 232.0
+margin_right = 343.68
+margin_bottom = 280.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton7" type="TextureButton" parent="RadialMenu"]
+margin_left = 332.41
+margin_top = 345.043
+margin_right = 380.41
+margin_bottom = 393.043
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton8" type="TextureButton" parent="RadialMenu"]
+margin_left = 428.57
+margin_top = 414.907
+margin_right = 476.57
+margin_bottom = 462.907
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
+margin_left = 547.43
+margin_top = 414.907
+margin_right = 595.43
+margin_bottom = 462.907
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
+margin_left = 643.59
+margin_top = 345.043
+margin_right = 691.59
+margin_bottom = 393.043
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )

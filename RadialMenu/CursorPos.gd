@@ -20,7 +20,7 @@ func get_index():
 	var to_return = (PI * 2 - angle) / index_offset
 
 	# Clip to the min-max and remove the additional calulation offset
-	return int(max(0, min(self.count, to_return - index_offset * 2)))
+	return int(max(0, min(self.count - 1, to_return - index_offset * 2)))
 
 func compute_index():
 	var current_index = self.get_index()

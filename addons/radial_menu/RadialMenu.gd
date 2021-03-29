@@ -13,7 +13,8 @@ export(Color, RGBA) var color_bg = Color(0.4, 0.4, 0.4, 1.0) setget set_color_bg
 export(Color, RGBA) var color_fg = Color(0.17, 0.69, 1.0, 1.0) setget set_color_fg;
 
 func set_shader_param(name: String, new_value):
-	$CenterContainer/Background.material.set_shader_param(name, new_value)
+	if not len(self.get_children()): return
+	$RadialMenu/Background.material.set_shader_param(name, new_value)
 
 func set_width_max(new_value: float):
 	if new_value - MIN_WIDTH < 0: return
@@ -75,7 +76,7 @@ func place_buttons():
 	var buttons = get_children()
 	if not len(buttons): return
 
-	var angle_increment = (2*PI) / len(buttons)
+	var angle_increment = (2 * PI) / len(buttons)
 	var center = self.get_size() / 2
 	center.y *= -1
 
@@ -87,7 +88,7 @@ func place_buttons():
 	var width = max_size - min_size
 	var half_size = min_size + width / 2
 
-	var angle = -PI + PI/4 #in radians
+	var angle = -PI + PI / 4 #in radians
 	for button in buttons:
 		var size = button.get_size() / 2
 
@@ -114,15 +115,17 @@ func _on_sort_children():
 
 	var min_size = self.get_bounding_rect()
 
-	$CenterContainer.anchor_right = ANCHOR_END
-	$CenterContainer.anchor_bottom = ANCHOR_END
+	$RadialMenu.anchor_left = ANCHOR_BEGIN
+	$RadialMenu.anchor_top = ANCHOR_BEGIN
+	$RadialMenu.anchor_right = ANCHOR_END
+	$RadialMenu.anchor_bottom = ANCHOR_END
 
 	# Resize the background
-	$CenterContainer/Background.set_custom_minimum_size(Vector2(min_size, min_size))
-	$CenterContainer/Background.set_pivot_offset(Vector2(min_size / 2, min_size / 2))
+	$RadialMenu/Background.set_custom_minimum_size(Vector2(min_size, min_size))
+	$RadialMenu/Background.set_pivot_offset(Vector2(min_size / 2, min_size / 2))
 
 	# Tell our cursor how many can be selected
-	$CenterContainer/CursorPos.set_count(len(self.get_children()))
+	$RadialMenu/CursorPos.set_count(len(self.get_children()))
 
 func _on_selected(index: int):
 	prints("Selected", index)
@@ -133,13 +136,16 @@ func _on_hover(index: int):
 	child.grab_focus()
 
 func _input(_event: InputEvent):
-	 var pos = $CenterContainer/CursorPos.cursor
+	 var pos = $RadialMenu/CursorPos.cursor
 	 self.cursor_deg = atan2(pos.y, pos.x)
+
+func _init():
+	self.add_child(preload("./RadialMenu.tscn").instance())
 
 func _ready():
 	self.place_buttons()
 
 	var _e
 	_e = self.connect("sort_children", self, "_on_sort_children")
-	_e = $CenterContainer/CursorPos.connect("hover", self, "_on_hover")
-	_e = $CenterContainer/CursorPos.connect("selected", self, "_on_selected")
+	_e = $RadialMenu/CursorPos.connect("hover", self, "_on_hover")
+	_e = $RadialMenu/CursorPos.connect("selected", self, "_on_selected")

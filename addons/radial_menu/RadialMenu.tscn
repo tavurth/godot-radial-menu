@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/radial_menu/selector.tres" type="Material" id=1]
+[ext_resource path="res://addons/radial_menu/CursorPos.gd" type="Script" id=2]
+
+[node name="RadialMenu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CursorPos" type="Control" parent="."]
+margin_left = 512.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 256.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+margin_left = 512.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 256, 256 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

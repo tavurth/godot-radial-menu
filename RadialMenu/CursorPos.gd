@@ -3,10 +3,10 @@ extends Control
 var touches = 0
 var cursor = Vector2(0, 0)
 
-func touch_start(event: InputEventScreenTouch):
+func touch_start(_event: InputEventScreenTouch):
 	touches += 1
 
-func touch_end(event: InputEventScreenTouch):
+func touch_end(_event: InputEventScreenTouch):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
@@ -15,20 +15,20 @@ func touch_end(event: InputEventScreenTouch):
 func touch_drag(event: InputEventScreenDrag):
 	self.cursor += event.relative
 
-func mouse_start(event: InputEventMouseButton):
+func mouse_start(_event: InputEventMouseButton):
 	touches += 1
 
-func mouse_end(event: InputEventMouseButton):
+func mouse_end(_event: InputEventMouseButton):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
 		cursor = Vector2(0, 0)
 
-func mouse_drag(event: InputEventMouseMotion):
+func mouse_drag(_event: InputEventMouseMotion):
 	if touches < 1: return
 
 	var parent = self.get_parent()
-	var center = parent.get_position() + parent.get_pivot_offset()
+	var center = self.get_global_position()
 
 	self.cursor = (center - self.get_global_mouse_position()) * -1
 

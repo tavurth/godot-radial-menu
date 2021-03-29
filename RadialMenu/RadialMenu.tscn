@@ -4,23 +4,33 @@
 [ext_resource path="res://RadialMenu/RadialMenu.gd" type="Script" id=2]
 [ext_resource path="res://RadialMenu/CursorPos.gd" type="Script" id=3]
 
-[node name="RadialMenu" type="ColorRect"]
-material = ExtResource( 1 )
-margin_left = 312.0
-margin_top = 56.0
-margin_right = 712.0
-margin_bottom = 456.0
-rect_min_size = Vector2( 400, 400 )
-rect_pivot_offset = Vector2( 200, 200 )
+[node name="RadialMenu" type="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CursorPos" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1.0
+margin_bottom = 1.0
+
+[node name="CursorPos" type="Control" parent="CenterContainer"]
+margin_left = 256.0
+margin_top = 256.0
+margin_right = 256.0
+margin_bottom = 256.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="CenterContainer"]
+material = ExtResource( 1 )
+margin_right = 512.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 512, 512 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

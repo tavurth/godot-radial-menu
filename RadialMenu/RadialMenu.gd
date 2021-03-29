@@ -116,8 +116,19 @@ func _on_sort_children():
 
 	$CenterContainer.anchor_right = ANCHOR_END
 	$CenterContainer.anchor_bottom = ANCHOR_END
+
+	# Resize the background
 	$CenterContainer/Background.set_custom_minimum_size(Vector2(min_size, min_size))
 	$CenterContainer/Background.set_pivot_offset(Vector2(min_size / 2, min_size / 2))
+
+	# Tell our cursor how many can be selected
+	$CenterContainer/CursorPos.set_count(len(self.get_children()))
+
+func _on_selected(index: int):
+	prints("Selected", index)
+
+func _on_hover(index: int):
+	prints("Hover", index)
 
 func _input(_event: InputEvent):
 	 var pos = $CenterContainer/CursorPos.cursor
@@ -126,4 +137,7 @@ func _input(_event: InputEvent):
 func _ready():
 	self.place_buttons()
 
-	var _e = self.connect("sort_children", self, "_on_sort_children")
+	var _e
+	_e = self.connect("sort_children", self, "_on_sort_children")
+	_e = $CenterContainer/CursorPos.connect("hover", self, "_on_hover")
+	_e = $CenterContainer/CursorPos.connect("selected", self, "_on_selected")

@@ -87,7 +87,7 @@ func place_buttons():
 	var width = max_size - min_size
 	var half_size = min_size + width / 2
 
-	var angle = 0 #in radians
+	var angle = -PI + PI/4 #in radians
 	for button in buttons:
 		var size = button.get_size() / 2
 
@@ -128,7 +128,9 @@ func _on_selected(index: int):
 	prints("Selected", index)
 
 func _on_hover(index: int):
-	prints("Hover", index)
+	var child = get_children()[index]
+	prints(index, child)
+	child.grab_focus()
 
 func _input(_event: InputEvent):
 	 var pos = $CenterContainer/CursorPos.cursor

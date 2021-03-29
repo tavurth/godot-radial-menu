@@ -21,5 +21,5 @@ float should_discard(vec2 uv) {
 }
 
 void fragment() {
-  COLOR = vec4(1., 0., 0., 1.) * should_discard(UV);
+  COLOR = vec4(1., 1., 1., 0.5) * should_discard(UV);
 }

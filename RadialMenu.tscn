@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MenuContainer.gd" type="Script" id=2]
-[ext_resource path="res://shaders/background.tres" type="Material" id=3]
-[ext_resource path="res://shaders/foreground.tres" type="Material" id=4]
+[ext_resource path="res://shaders/selector.tres" type="Material" id=4]
 
 [node name="RadialMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Menu" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -16,18 +18,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="Menu"]
-material = ExtResource( 3 )
-margin_left = 312.0
-margin_top = 55.0
-margin_right = 712.0
-margin_bottom = 455.0
-rect_min_size = Vector2( 400, 400 )
-
-[node name="Foreground" type="ColorRect" parent="Menu"]
+[node name="Selector" type="ColorRect" parent="Menu"]
 material = ExtResource( 4 )
 margin_left = 312.0
-margin_top = 55.0
+margin_top = 56.0
 margin_right = 712.0
-margin_bottom = 455.0
+margin_bottom = 456.0
 rect_min_size = Vector2( 400, 400 )

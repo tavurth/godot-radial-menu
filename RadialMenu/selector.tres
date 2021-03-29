@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://RadialMenu/selector.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/width_max = 0.362
+shader_param/width_min = 0.312
+shader_param/cursor_deg = -1.545
+shader_param/cursor_size = 0.26
+shader_param/color_bg = Color( 0.4, 0.4, 1, 1 )
+shader_param/color_fg = Color( 0.552941, 0.211765, 0.211765, 0.301961 )

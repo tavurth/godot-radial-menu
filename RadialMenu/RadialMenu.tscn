@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RadialMenu/selector.tres" type="Material" id=1]
+[ext_resource path="res://RadialMenu/RadialMenu.gd" type="Script" id=2]
+
+[node name="RadialMenu" type="ColorRect"]
+material = ExtResource( 1 )
+margin_left = 312.0
+margin_top = 56.0
+margin_right = 712.0
+margin_bottom = 456.0
+rect_min_size = Vector2( 400, 400 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

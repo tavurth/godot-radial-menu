@@ -10,4 +10,8 @@ __meta__ = {
 }
 
 [node name="RadialMenu" parent="." instance=ExtResource( 1 )]
+width_max = 0.834
+width_min = 0.282
+cursor_size = 0.417
+cursor_deg = -0.052
 color_fg = Color( 0.168627, 0.690196, 1, 1 )

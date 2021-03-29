@@ -22,8 +22,8 @@ func set_width_max(new_value: float):
 	self.set_shader_param("width_max", new_value)
 
 	# Handle case where we're now smaller than the minimum size
-	if new_value < width_min + MIN_WIDTH:
-		self.set_width_min(new_value - MIN_WIDTH)
+	if new_value - width_min < MIN_WIDTH:
+		self.set_width_min(new_value - MIN_WIDTH * 2)
 
 func set_width_min(new_value: float):
 	if new_value + MIN_WIDTH > 1: return
@@ -32,8 +32,8 @@ func set_width_min(new_value: float):
 	self.set_shader_param("width_min", new_value)
 
 	# Handle case where we're now bigger than the minimum size
-	if new_value > width_min - MIN_WIDTH:
-		self.set_width_max(new_value + MIN_WIDTH)
+	if width_max - new_value < MIN_WIDTH:
+		self.set_width_max(new_value + MIN_WIDTH * 2)
 
 func set_cursor_deg(new_value: float):
 	cursor_deg = new_value

@@ -4,27 +4,31 @@ var touches = 0
 var cursor = Vector2(0, 0)
 
 func touch_start(_event: InputEventScreenTouch):
+	if touches < 1:
+		cursor = Vector2(0, 0)
+
 	touches += 1
 
 func touch_end(_event: InputEventScreenTouch):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
-		cursor = Vector2(0, 0)
 
 func touch_drag(event: InputEventScreenDrag):
 	self.cursor += event.relative
 
 func mouse_start(_event: InputEventMouseButton):
+	if touches < 1:
+		mouse_drag()
+
 	touches += 1
 
 func mouse_end(_event: InputEventMouseButton):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
-		cursor = Vector2(0, 0)
 
-func mouse_drag(_event: InputEventMouseMotion):
+func mouse_drag(_event: InputEventMouseMotion = null):
 	if touches < 1: return
 
 	var parent = self.get_parent()

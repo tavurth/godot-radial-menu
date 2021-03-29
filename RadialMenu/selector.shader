@@ -9,8 +9,8 @@ uniform float width_min = 0.5;
 uniform float cursor_deg = 0.4;
 uniform float cursor_size = 0.4;
 
-uniform vec4 color_bg = vec4(0.4, 0.4, 0.4, 1.0); 
-uniform vec4 color_fg = vec4(0.17, 0.69, 1.0, 1.0); 
+uniform vec4 color_bg = vec4(0.4, 0.4, 0.4, 1.0);
+uniform vec4 color_fg = vec4(0.17, 0.69, 1.0, 1.0);
 
 float circle(vec2 uv, float radius) {
   float dist = length(uv - MIDPOINT);
@@ -24,7 +24,7 @@ float circle(vec2 uv, float radius) {
 }
 
 float should_discard(vec2 uv) {
-  return circle(uv, width_max) - circle(uv, width_min / 1.4);
+  return circle(uv, width_max) - circle(uv, width_min);
 }
 
 float find_deg(vec2 uv) {

@@ -1,7 +1,7 @@
 tool
 extends Container
 
-const MIN_WIDTH = 0.05
+const MIN_WIDTH = 0.01
 
 export(float, 0, 1) var width_max = 1.0 setget set_width_max;
 export(float, 0, 1) var width_min = 0.5 setget set_width_min;
@@ -25,6 +25,8 @@ func set_width_max(new_value: float):
 	if new_value - width_min < MIN_WIDTH:
 		self.set_width_min(new_value - MIN_WIDTH * 2)
 
+	self.emit_signal("sort_children")
+
 func set_width_min(new_value: float):
 	if new_value + MIN_WIDTH > 1: return
 
@@ -34,6 +36,8 @@ func set_width_min(new_value: float):
 	# Handle case where we're now bigger than the minimum size
 	if width_max - new_value < MIN_WIDTH:
 		self.set_width_max(new_value + MIN_WIDTH * 2)
+
+	self.emit_signal("sort_children")
 
 func set_cursor_deg(new_value: float):
 	cursor_deg = new_value
@@ -62,6 +66,10 @@ func get_children():
 
 	return to_return
 
+func get_bounding_rect():
+	var size = self.get_size()
+	return min(size.x, size.y)
+
 #Repositions the buttons
 func place_buttons():
 	var buttons = get_children()
@@ -71,11 +79,25 @@ func place_buttons():
 	var center = self.get_size() / 2
 	center.y *= -1
 
+	var rect = self.get_bounding_rect() / 2
+
+	var max_size = rect * self.width_max
+	var min_size = rect * self.width_min
+
+	var width = max_size - min_size
+	var half_size = min_size + width / 2
+
 	var angle = 0 #in radians
 	for button in buttons:
+		var size = button.get_size() / 2
+
+		# Handle edge case where the radial is very thin
+		if width < size.x: size.x = 0
+		if width < size.y: size.y = 0
+
 		#calculate the x and y positions for the button at that angle
-		var x = center.x + cos(angle) * (width_max + width_min) * 100
-		var y = center.y + sin(angle) * (width_max + width_min) * 100
+		var x = center.x + cos(angle) * (half_size + size.x)
+		var y = center.y + sin(angle) * (half_size + size.y)
 
 		var corner_pos = Vector2(x, -y) - (button.get_size() / 2)
 		button.set_position(corner_pos)
@@ -90,8 +112,7 @@ func add_button(btn):
 func _on_sort_children():
 	self.place_buttons()
 
-	var size = self.get_size()
-	var min_size = min(size.x, size.y)
+	var min_size = self.get_bounding_rect()
 
 	$CenterContainer.anchor_right = ANCHOR_END
 	$CenterContainer.anchor_bottom = ANCHOR_END

@@ -50,3 +50,39 @@ func set_color_bg(new_value: Color):
 func set_color_fg(new_value: Color):
 	color_fg = new_value
 	self.set_shader_param("color_fg", new_value)
+
+#Repositions the buttons
+func place_buttons():
+	var buttons = get_children()
+
+	#Stop before we cause problems when no buttons are available
+	if buttons.size() == 0:
+		return
+
+	#Amount to change the angle for each button
+	var angle_offset = (2*PI) / buttons.size() #in degrees
+	var center = self.get_size() / 2
+	center.y *= -1
+
+	var angle = 0 #in radians
+	for button in buttons:
+		#calculate the x and y positions for the button at that angle
+		var x = center.x + cos(angle) * (width_max + width_min) * 100
+		var y = center.y + sin(angle) * (width_max + width_min) * 100
+
+		var corner_pos = Vector2(x, -y) - (button.get_size() / 2)
+		button.set_position(corner_pos)
+
+		#Advance to next angle position
+		angle += angle_offset
+
+func add_button(btn):
+	self.add_child(btn)
+	self.place_buttons()
+
+func _input(event: InputEvent):
+	 var pos = $CursorPos.cursor
+	 self.cursor_deg = atan2(pos.y, pos.x)
+
+func _ready():
+	self.place_buttons()

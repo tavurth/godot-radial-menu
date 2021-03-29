@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://RadialMenu/RadialMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icons/flip.svg" type="Texture" id=2]
 
 [node name="ExampleScene" type="CenterContainer"]
 anchor_right = 1.0
@@ -15,3 +16,53 @@ width_min = 0.282
 cursor_size = 0.417
 cursor_deg = -0.052
 color_fg = Color( 0.168627, 0.690196, 1, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="RadialMenu"]
+margin_left = 231.8
+margin_top = 79.3516
+margin_right = 279.8
+margin_bottom = 127.352
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="RadialMenu"]
+margin_left = 120.2
+margin_top = 79.3516
+margin_right = 168.2
+margin_bottom = 127.352
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton3" type="TextureButton" parent="RadialMenu"]
+margin_left = 64.4
+margin_top = 176.0
+margin_right = 112.4
+margin_bottom = 224.0
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton4" type="TextureButton" parent="RadialMenu"]
+margin_left = 120.2
+margin_top = 272.648
+margin_right = 168.2
+margin_bottom = 320.648
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton5" type="TextureButton" parent="RadialMenu"]
+margin_left = 231.8
+margin_top = 272.648
+margin_right = 279.8
+margin_bottom = 320.648
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://RadialMenu/selector.tres" type="Material" id=1]
 [ext_resource path="res://RadialMenu/RadialMenu.gd" type="Script" id=2]
+[ext_resource path="res://RadialMenu/CursorPos.gd" type="Script" id=3]
 
 [node name="RadialMenu" type="ColorRect"]
 material = ExtResource( 1 )
@@ -10,7 +11,16 @@ margin_top = 56.0
 margin_right = 712.0
 margin_bottom = 456.0
 rect_min_size = Vector2( 400, 400 )
+rect_pivot_offset = Vector2( 200, 200 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CursorPos" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

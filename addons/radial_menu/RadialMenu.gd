@@ -56,6 +56,14 @@ func set_color_fg(new_value: Color):
 	color_fg = new_value
 	self.set_shader_param("color_fg", new_value)
 
+func setup():
+	self.set_shader_param("color_bg", color_bg)
+	self.set_shader_param("color_fg", color_fg)
+	self.set_shader_param("width_max", width_max)
+	self.set_shader_param("width_min", width_min)
+	self.set_shader_param("cursor_deg", cursor_deg)
+	self.set_shader_param("cursor_size", cursor_size)
+
 # We want to remove our own scene children
 # so that we're only processing user added nodes
 func get_children():
@@ -143,6 +151,7 @@ func _init():
 	self.add_child(preload("./RadialMenu.tscn").instance())
 
 func _ready():
+	self.setup()
 	self.place_buttons()
 
 	var _e

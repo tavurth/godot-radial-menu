@@ -37,10 +37,10 @@ __meta__ = {
 }
 
 [node name="TextureButton9" type="TextureButton" parent="RadialMenu2"]
-margin_left = 488.0
-margin_top = 424.704
-margin_right = 536.0
-margin_bottom = 472.704
+margin_left = 509.576
+margin_top = 423.492
+margin_right = 557.576
+margin_bottom = 471.492
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -51,10 +51,10 @@ __meta__ = {
 }
 
 [node name="TextureButton10" type="TextureButton" parent="RadialMenu2"]
-margin_left = 624.262
-margin_top = 368.262
-margin_right = 672.262
-margin_bottom = 416.262
+margin_left = 651.167
+margin_top = 334.525
+margin_right = 699.167
+margin_bottom = 382.525
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -65,10 +65,10 @@ __meta__ = {
 }
 
 [node name="TextureButton11" type="TextureButton" parent="RadialMenu2"]
-margin_left = 680.704
-margin_top = 232.0
-margin_right = 728.704
-margin_bottom = 280.0
+margin_left = 669.89
+margin_top = 168.354
+margin_right = 717.89
+margin_bottom = 216.354
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -79,10 +79,10 @@ __meta__ = {
 }
 
 [node name="TextureButton12" type="TextureButton" parent="RadialMenu2"]
-margin_left = 624.262
-margin_top = 95.7377
-margin_right = 672.262
-margin_bottom = 143.738
+margin_left = 551.646
+margin_top = 50.1096
+margin_right = 599.646
+margin_bottom = 98.1099
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -93,10 +93,10 @@ __meta__ = {
 }
 
 [node name="TextureButton13" type="TextureButton" parent="RadialMenu2"]
-margin_left = 488.0
-margin_top = 39.296
-margin_right = 536.0
-margin_bottom = 87.296
+margin_left = 385.475
+margin_top = 68.8329
+margin_right = 433.475
+margin_bottom = 116.833
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )
@@ -107,10 +107,10 @@ __meta__ = {
 }
 
 [node name="TextureButton14" type="TextureButton" parent="RadialMenu2"]
-margin_left = 351.738
-margin_top = 95.7377
-margin_right = 399.738
-margin_bottom = 143.738
+margin_left = 296.508
+margin_top = 210.424
+margin_right = 344.508
+margin_bottom = 258.424
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 3 )

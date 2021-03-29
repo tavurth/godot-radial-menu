@@ -1,6 +1,9 @@
 tool
 extends Container
 
+signal hovered(child)
+signal selected(child)
+
 const MIN_WIDTH = 0.01
 
 export(float, 0, 1) var width_max = 1.0 setget set_width_max;
@@ -136,12 +139,23 @@ func _on_sort_children():
 	$RadialMenu/CursorPos.set_count(len(self.get_children()))
 
 func _on_selected(index: int):
-	prints("Selected", index)
+	var child = get_children()[index]
+
+	if child is Control:
+		child.grab_focus()
+		
+	if child is BaseButton:
+		child.set_pressed(true)
+
+	self.emit_signal("selected", child)
 
 func _on_hover(index: int):
 	var child = get_children()[index]
-	prints(index, child)
-	child.grab_focus()
+
+	if child is Control:
+		child.grab_focus()
+
+	self.emit_signal("hovered", child)
 
 func _input(_event: InputEvent):
 	 var pos = $RadialMenu/CursorPos.cursor

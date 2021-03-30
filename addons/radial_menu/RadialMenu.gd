@@ -6,6 +6,8 @@ signal selected(child)
 
 const MIN_WIDTH = 0.01
 
+export(PackedScene) var center_node setget set_center_node
+
 export(float, 0, 1) var width_max = 1.0 setget set_width_max;
 export(float, 0, 1) var width_min = 0.5 setget set_width_min;
 
@@ -18,6 +20,16 @@ export(Color, RGBA) var color_fg = Color(0.17, 0.69, 1.0, 1.0) setget set_color_
 func set_shader_param(name: String, new_value):
 	if not len(self.get_children()): return
 	$RadialMenu/Background.material.set_shader_param(name, new_value)
+
+func set_center_node(new_node: PackedScene):
+	center_node = new_node
+
+	var old_nodes = $RadialMenu/CenterNode.get_children()
+	for child in old_nodes:
+		child.set_visible(false)
+		child.queue_free()
+
+	$RadialMenu/CenterNode.add_child(new_node.instance())
 
 func set_width_max(new_value: float):
 	if new_value - MIN_WIDTH < 0: return
@@ -40,6 +52,10 @@ func set_width_min(new_value: float):
 	# Handle case where we're now bigger than the minimum size
 	if width_max - new_value < MIN_WIDTH:
 		self.set_width_max(new_value + MIN_WIDTH * 2)
+
+	var min_width = get_bounding_rect() * new_value
+	prints(get_bounding_rect(), min_width, self.get_size())
+	$RadialMenu/CenterNode.rect_min_size = Vector2(min_width, min_width)
 
 	self.emit_signal("sort_children")
 

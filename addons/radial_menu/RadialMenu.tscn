@@ -13,10 +13,6 @@ __meta__ = {
 }
 
 [node name="CursorPos" type="Control" parent="."]
-margin_left = 512.0
-margin_top = 256.0
-margin_right = 512.0
-margin_bottom = 256.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,11 +20,12 @@ __meta__ = {
 
 [node name="Background" type="ColorRect" parent="."]
 material = ExtResource( 1 )
-margin_left = 512.0
-margin_top = 256.0
-margin_right = 512.0
-margin_bottom = 256.0
 rect_pivot_offset = Vector2( 256, 256 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CenterNode" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flip-hover.svg-d7d7e15eead2185b246a7d52747c9db6.stex"
+path="res://.import/icon.png-e91c9794da117ed60ae160c71793081d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/flip-hover.svg"
-dest_files=[ "res://.import/flip-hover.svg-d7d7e15eead2185b246a7d52747c9db6.stex" ]
+source_file="res://ExampleRadial/icon.png"
+dest_files=[ "res://.import/icon.png-e91c9794da117ed60ae160c71793081d.stex" ]
 
 [params]
 

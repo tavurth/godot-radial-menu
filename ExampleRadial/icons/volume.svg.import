@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flip.svg-97315ca6aecd34162c51ea7078a0e161.stex"
+path="res://.import/volume.svg-b9f7a5303024f5a2f01ef7d3af67663c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/flip.svg"
-dest_files=[ "res://.import/flip.svg-97315ca6aecd34162c51ea7078a0e161.stex" ]
+source_file="res://ExampleRadial/icons/volume.svg"
+dest_files=[ "res://.import/volume.svg-b9f7a5303024f5a2f01ef7d3af67663c.stex" ]
 
 [params]
 

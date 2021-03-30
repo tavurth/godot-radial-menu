@@ -1,5 +1,0 @@
-#+TITLE: Godot Radial Menu
-
-[[ExampleRadial/Recording.webm]]
-
-[[ExampleRadial/ExampleScreenshot.png]]

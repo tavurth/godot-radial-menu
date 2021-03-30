@@ -151,7 +151,8 @@ func _on_sort_children():
 	$RadialMenu/Background.set_pivot_offset(Vector2(min_size / 2, min_size / 2))
 
 	# Tell our cursor how many can be selected
-	$RadialMenu/CursorPos.set_count(len(self.get_children()))
+	if not Engine.editor_hint:
+		$RadialMenu/CursorPos.set_count(len(self.get_children()))
 
 func _on_selected(index: int):
 	var child = get_children()[index]

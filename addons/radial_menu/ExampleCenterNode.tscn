@@ -6,6 +6,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 80, 80 )
+rect_scale = Vector2( 2, 2 )
 text = "This is some center text"
 __meta__ = {
 "_edit_use_anchors_": false

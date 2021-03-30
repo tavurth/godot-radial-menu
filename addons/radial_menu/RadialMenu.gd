@@ -54,7 +54,6 @@ func set_width_min(new_value: float):
 		self.set_width_max(new_value + MIN_WIDTH * 2)
 
 	var min_width = get_bounding_rect() * new_value
-	prints(get_bounding_rect(), min_width, self.get_size())
 	$RadialMenu/CenterNode.rect_min_size = Vector2(min_width, min_width)
 
 	self.emit_signal("sort_children")

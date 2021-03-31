@@ -1,0 +1,94 @@
+* Godot Radial Menu
+
+I created this Radial Menu as an addon for a few of my projects.
+
+The rendering of the menu is primarily done through shader code and so should be pretty performant.
+
+#+caption: img
+[[./ExampleRadial/Example.gif]]
+
+** Setup
+#+caption: img
+[[./ExampleRadial/NodeSetup.png]]
+
+#+begin_src gdscript
+  func _ready():
+      $RadialMenu.connect("selected", self, "_on_selected")
+
+  func _input(event: InputEvent):
+      if event is InputEventScreenTouch:
+          $RadialMenu.set_visible(event.pressed)
+
+  func _on_selected(child: Node):
+      prints("Child was selected:", child)
+#+end_src
+
+** Supported signals
+=hovered(child)= Emitted when a button or child is hovered
+
+=selected(child)= Emitted when a button or child is selected
+
+** Supported controls
+   :PROPERTIES:
+   :CUSTOM_ID: supported-controls
+   :END:
+#+caption: img
+[[./ExampleRadial/Controls.png]]
+
+*** Center Node
+
+=set_center_node(Node)=
+
+Controls display in center of the spinner
+
+*** Width max
+
+ =set_width_max(Float)=
+
+- Minimum: 0
+- Maximum: 1
+
+The outside edge size of the spinner
+
+*** Width min
+
+
+ =set_width_min(Float)=
+
+- Minimum: 0
+- Maximum: 1
+
+The inside edge size of the spinner
+
+*** Cursor size
+
+
+ =set_cursor_size(Float)=
+
+- Minimum: 0
+- Maximum: +ve PI
+
+The size of the radial arc (blue portion)
+
+*** Cursor deg
+
+
+ =set_cursor_deg(Float)=
+
+- Minimum: -ve PI
+- Maximum: +ve PI
+
+The starting degree of the cursor (will update with mouse or touch
+events)
+
+*** Color BG
+
+=set_color_bg(Color)=
+
+Background color of the radial (supports RGBA)
+
+*** Color FG
+
+=set_color_fg(Color)=
+
+Foreground color of the radial (supports RGBA)

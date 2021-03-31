@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ExampleRadial/icons/volume.svg" type="Texture" id=1]
 [ext_resource path="res://ExampleRadial/icons/volume-hover.svg" type="Texture" id=2]
 [ext_resource path="res://ExampleRadial/ExampleScene.gd" type="Script" id=3]
 [ext_resource path="res://addons/radial_menu/RadialMenu.gd" type="Script" id=4]
-[ext_resource path="res://addons/radial_menu/ExampleCenterNode.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ExampleRadial/icons/flip.svg" type="Texture" id=6]
 [ext_resource path="res://ExampleRadial/icons/flip-hover.svg" type="Texture" id=7]
 
@@ -26,7 +25,6 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-center_node = ExtResource( 5 )
 width_min = 0.478
 
 [node name="TextureButton8" type="TextureButton" parent="RadialMenu"]
@@ -70,7 +68,7 @@ __meta__ = {
 
 [node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
 margin_left = 577.842
-margin_top = 62.1587
+margin_top = 62.1588
 margin_right = 625.842
 margin_bottom = 110.158
 texture_normal = ExtResource( 1 )

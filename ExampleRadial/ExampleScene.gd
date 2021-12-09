@@ -3,8 +3,8 @@ extends Control
 func _ready():
 	print($RadialMenu/TextureButton8)
 
-func _on_TextureButton8_pressed():
-	print("Button 8 pressed")
+func _on_TextureButton_pressed():
+	print("A button was pressed")
 
 func _on_RadialMenu_hovered(child):
 	prints("Hovered", child)

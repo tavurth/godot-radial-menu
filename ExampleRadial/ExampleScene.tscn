@@ -13,6 +13,9 @@ custom_constants/margin_top = 40
 custom_constants/margin_left = 40
 custom_constants/margin_bottom = 40
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RadialMenu" type="Container" parent="."]
 margin_left = 40.0
@@ -39,10 +42,10 @@ __meta__ = {
 }
 
 [node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
-margin_left = 408.968
-margin_top = 371.428
-margin_right = 456.968
-margin_bottom = 419.428
+margin_left = 468.559
+margin_top = 374.469
+margin_right = 516.559
+margin_bottom = 422.469
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -52,10 +55,10 @@ __meta__ = {
 }
 
 [node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
-margin_left = 512.17
-margin_top = 364.046
-margin_right = 560.17
-margin_bottom = 412.046
+margin_left = 603.479
+margin_top = 289.694
+margin_right = 651.479
+margin_bottom = 337.694
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -65,10 +68,10 @@ __meta__ = {
 }
 
 [node name="TextureButton11" type="TextureButton" parent="RadialMenu"]
-margin_left = 594.999
-margin_top = 302.042
-margin_right = 642.998
-margin_bottom = 350.042
+margin_left = 621.32
+margin_top = 131.353
+margin_right = 669.32
+margin_bottom = 179.353
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -78,10 +81,10 @@ __meta__ = {
 }
 
 [node name="TextureButton12" type="TextureButton" parent="RadialMenu"]
-margin_left = 631.156
-margin_top = 205.1
-margin_right = 679.156
-margin_bottom = 253.1
+margin_left = 508.647
+margin_top = 18.6804
+margin_right = 556.647
+margin_bottom = 66.6804
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -91,10 +94,10 @@ __meta__ = {
 }
 
 [node name="TextureButton13" type="TextureButton" parent="RadialMenu"]
-margin_left = 609.163
-margin_top = 103.998
-margin_right = 657.163
-margin_bottom = 151.998
+margin_left = 350.306
+margin_top = 36.5211
+margin_right = 398.306
+margin_bottom = 84.5211
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -104,62 +107,10 @@ __meta__ = {
 }
 
 [node name="TextureButton14" type="TextureButton" parent="RadialMenu"]
-margin_left = 536.002
-margin_top = 30.8371
-margin_right = 584.002
-margin_bottom = 78.8371
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton15" type="TextureButton" parent="RadialMenu"]
-margin_left = 434.9
-margin_top = 8.84385
-margin_right = 482.9
-margin_bottom = 56.8439
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton16" type="TextureButton" parent="RadialMenu"]
-margin_left = 337.958
-margin_top = 45.0014
-margin_right = 385.958
-margin_bottom = 93.0014
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton17" type="TextureButton" parent="RadialMenu"]
-margin_left = 275.954
-margin_top = 127.83
-margin_right = 323.954
-margin_bottom = 175.83
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton18" type="TextureButton" parent="RadialMenu"]
-margin_left = 268.572
-margin_top = 231.032
-margin_right = 316.572
-margin_bottom = 279.032
+margin_left = 265.531
+margin_top = 171.441
+margin_right = 313.531
+margin_bottom = 219.441
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -170,14 +121,10 @@ __meta__ = {
 
 [connection signal="hovered" from="RadialMenu" to="." method="_on_RadialMenu_hovered"]
 [connection signal="selected" from="RadialMenu" to="." method="_on_RadialMenu_selected"]
-[connection signal="pressed" from="RadialMenu/TextureButton8" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton9" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton10" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton11" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton12" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton13" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton14" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton15" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton16" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton17" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton18" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton8" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton9" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton10" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton11" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton12" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton13" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton14" to="." method="_on_TextureButton_pressed"]

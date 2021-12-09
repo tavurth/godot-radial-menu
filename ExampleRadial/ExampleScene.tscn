@@ -1,7 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ExampleRadial/icons/volume.svg" type="Texture" id=1]
-[ext_resource path="res://ExampleRadial/icons/volume-hover.svg" type="Texture" id=2]
 [ext_resource path="res://ExampleRadial/ExampleScene.gd" type="Script" id=3]
 [ext_resource path="res://addons/radial_menu/RadialMenu.gd" type="Script" id=4]
 [ext_resource path="res://ExampleRadial/icons/flip.svg" type="Texture" id=6]
@@ -40,11 +38,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
+margin_left = 408.968
+margin_top = 371.428
+margin_right = 456.968
+margin_bottom = 419.428
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
+margin_left = 512.17
+margin_top = 364.046
+margin_right = 560.17
+margin_bottom = 412.046
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton11" type="TextureButton" parent="RadialMenu"]
+margin_left = 594.999
+margin_top = 302.042
+margin_right = 642.998
+margin_bottom = 350.042
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureButton12" type="TextureButton" parent="RadialMenu"]
-margin_left = 495.525
-margin_top = 369.367
-margin_right = 543.525
-margin_bottom = 417.367
+margin_left = 631.156
+margin_top = 205.1
+margin_right = 679.156
+margin_bottom = 253.1
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -54,10 +91,10 @@ __meta__ = {
 }
 
 [node name="TextureButton13" type="TextureButton" parent="RadialMenu"]
-margin_left = 625.367
-margin_top = 239.525
-margin_right = 673.367
-margin_bottom = 287.525
+margin_left = 609.163
+margin_top = 103.998
+margin_right = 657.163
+margin_bottom = 151.998
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_focused = ExtResource( 7 )
@@ -66,52 +103,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
-margin_left = 577.842
-margin_top = 62.1588
-margin_right = 625.842
-margin_bottom = 110.158
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
+[node name="TextureButton14" type="TextureButton" parent="RadialMenu"]
+margin_left = 536.002
+margin_top = 30.8371
+margin_right = 584.002
+margin_bottom = 78.8371
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
-margin_left = 400.475
-margin_top = 14.6328
-margin_right = 448.475
-margin_bottom = 62.6328
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
+[node name="TextureButton15" type="TextureButton" parent="RadialMenu"]
+margin_left = 434.9
+margin_top = 8.84385
+margin_right = 482.9
+margin_bottom = 56.8439
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton11" type="TextureButton" parent="RadialMenu"]
-margin_left = 270.633
-margin_top = 144.475
-margin_right = 318.633
-margin_bottom = 192.475
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
+[node name="TextureButton16" type="TextureButton" parent="RadialMenu"]
+margin_left = 337.958
+margin_top = 45.0014
+margin_right = 385.958
+margin_bottom = 93.0014
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureButton17" type="TextureButton" parent="RadialMenu"]
+margin_left = 275.954
+margin_top = 127.83
+margin_right = 323.954
+margin_bottom = 175.83
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton18" type="TextureButton" parent="RadialMenu"]
+margin_left = 268.572
+margin_top = 231.032
+margin_right = 316.572
+margin_bottom = 279.032
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="hovered" from="RadialMenu" to="." method="_on_RadialMenu_hovered"]
 [connection signal="selected" from="RadialMenu" to="." method="_on_RadialMenu_selected"]
 [connection signal="pressed" from="RadialMenu/TextureButton8" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton12" to="." method="_on_TextureButton8_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton13" to="." method="_on_TextureButton8_pressed"]
 [connection signal="pressed" from="RadialMenu/TextureButton9" to="." method="_on_TextureButton8_pressed"]
 [connection signal="pressed" from="RadialMenu/TextureButton10" to="." method="_on_TextureButton8_pressed"]
 [connection signal="pressed" from="RadialMenu/TextureButton11" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton12" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton13" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton14" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton15" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton16" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton17" to="." method="_on_TextureButton8_pressed"]
+[connection signal="pressed" from="RadialMenu/TextureButton18" to="." method="_on_TextureButton8_pressed"]

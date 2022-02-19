@@ -125,3 +125,5 @@ Background color of the radial (supports RGBA)
 `set_color_fg(Color)`
 
 Foreground color of the radial (supports RGBA)
+
+<a href="https://www.buymeacoffee.com/tavurth" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

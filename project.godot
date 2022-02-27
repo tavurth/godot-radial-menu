@@ -18,10 +18,6 @@ config/name="godot-radial-menu"
 run/main_scene="res://ExampleRadial/ExampleScene.tscn"
 config/icon="res://ExampleRadial/icon.png"
 
-[display]
-
-window/size/height=512
-
 [editor_plugins]
 
 enabled=PoolStringArray( "radial_menu" )

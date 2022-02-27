@@ -12,6 +12,10 @@ uniform float cursor_size = 0.4;
 uniform vec4 color_bg = vec4(0.4, 0.4, 0.4, 1.0);
 uniform vec4 color_fg = vec4(0.17, 0.69, 1.0, 1.0);
 
+uniform float bevel_width = 1.0;
+uniform bool bevel_enabled = false;
+uniform vec4 bevel_color = vec4(1., 0., 0., 1.);
+
 float circle(vec2 uv, float radius) {
   float dist = length(uv - MIDPOINT);
 
@@ -23,8 +27,19 @@ float circle(vec2 uv, float radius) {
     );
 }
 
-float should_discard(vec2 uv) {
+float is_in_circle(vec2 uv) {
   return circle(uv, width_max) - circle(uv, width_min);
+}
+
+float is_in_bevel(vec2 uv) {
+  float inside = circle(uv, width_min);
+  float outside = circle(uv, width_max);
+
+  return abs(
+    (outside - circle(uv, width_max - bevel_width))
+    +
+    (circle(uv, width_min + bevel_width))
+  );
 }
 
 float find_deg(vec2 uv) {
@@ -33,7 +48,13 @@ float find_deg(vec2 uv) {
 }
 
 vec4 find_color(vec2 uv) {
-  float current_degree = abs(find_deg(uv) - cursor_deg);  
+  // Bevel color logic
+  if (bevel_enabled && is_in_bevel(uv) > 0.) {
+    return bevel_color;
+  }
+
+  float current_degree = abs(find_deg(uv) - cursor_deg);
+
   if (current_degree < cursor_size || current_degree > PI_2 - cursor_size) {
     return color_fg;
   }
@@ -42,5 +63,5 @@ vec4 find_color(vec2 uv) {
 }
 
 void fragment() {
-  COLOR = find_color(UV) * should_discard(UV);
+  COLOR = find_color(UV) * is_in_circle(UV);
 }

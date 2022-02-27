@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://ExampleRadial/icons/flip.png" type="Texture" id=1]
+[ext_resource path="res://ExampleRadial/icons/volume.png" type="Texture" id=2]
 [ext_resource path="res://ExampleRadial/ExampleScene.gd" type="Script" id=3]
 [ext_resource path="res://addons/radial_menu/RadialMenu.gd" type="Script" id=4]
-[ext_resource path="res://ExampleRadial/icons/flip.svg" type="Texture" id=6]
-[ext_resource path="res://ExampleRadial/icons/flip-hover.svg" type="Texture" id=7]
 
 [node name="ExampleScene" type="MarginContainer"]
 anchor_right = 1.0
@@ -21,110 +21,105 @@ __meta__ = {
 margin_left = 40.0
 margin_top = 40.0
 margin_right = 984.0
-margin_bottom = 472.0
+margin_bottom = 560.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-width_min = 0.478
+width_min = 0.243
+bevel_width = 0.221
+bevel_enabled = true
+modulate_enabled = true
 
-[node name="TextureButton8" type="TextureButton" parent="RadialMenu"]
-margin_left = 318.158
-margin_top = 321.842
-margin_right = 366.158
-margin_bottom = 369.842
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="FlipButton" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 327.011
+margin_top = 369.868
+margin_right = 363.011
+margin_bottom = 399.868
+focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
 
-[node name="TextureButton9" type="TextureButton" parent="RadialMenu"]
-margin_left = 468.559
-margin_top = 374.469
-margin_right = 516.559
-margin_bottom = 422.469
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="FlipButton2" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 385.274
+margin_top = 408.148
+margin_right = 421.274
+margin_bottom = 438.148
+focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
 
-[node name="TextureButton10" type="TextureButton" parent="RadialMenu"]
-margin_left = 603.479
-margin_top = 289.694
-margin_right = 651.479
-margin_bottom = 337.694
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="FlipButton3" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 454.0
+margin_top = 421.59
+margin_right = 490.0
+margin_bottom = 451.59
+focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
 
-[node name="TextureButton11" type="TextureButton" parent="RadialMenu"]
-margin_left = 621.32
-margin_top = 131.353
-margin_right = 669.32
-margin_bottom = 179.353
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="FlipButton4" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 522.726
+margin_top = 408.148
+margin_right = 558.727
+margin_bottom = 438.148
+focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
 
-[node name="TextureButton12" type="TextureButton" parent="RadialMenu"]
-margin_left = 508.647
-margin_top = 18.6804
-margin_right = 556.647
-margin_bottom = 66.6804
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="VolumeButton" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 580.843
+margin_top = 369.722
+margin_right = 617.843
+margin_bottom = 400.722
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
 
-[node name="TextureButton13" type="TextureButton" parent="RadialMenu"]
-margin_left = 350.306
-margin_top = 36.5211
-margin_right = 398.306
-margin_bottom = 84.5211
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="VolumeButton2" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 619.881
+margin_top = 312.269
+margin_right = 656.881
+margin_bottom = 343.269
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
 
-[node name="TextureButton14" type="TextureButton" parent="RadialMenu"]
-margin_left = 265.531
-margin_top = 171.441
-margin_right = 313.531
-margin_bottom = 219.441
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="VolumeButton3" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 633.59
+margin_top = 244.5
+margin_right = 670.59
+margin_bottom = 275.5
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
+
+[node name="VolumeButton4" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 619.881
+margin_top = 176.731
+margin_right = 656.882
+margin_bottom = 207.731
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
+
+[node name="VolumeButton5" type="Button" parent="RadialMenu"]
+modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
+margin_left = 580.843
+margin_top = 119.278
+margin_right = 617.843
+margin_bottom = 150.278
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
 
 [connection signal="hovered" from="RadialMenu" to="." method="_on_RadialMenu_hovered"]
 [connection signal="selected" from="RadialMenu" to="." method="_on_RadialMenu_selected"]
-[connection signal="pressed" from="RadialMenu/TextureButton8" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton9" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton10" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton11" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton12" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton13" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="RadialMenu/TextureButton14" to="." method="_on_TextureButton_pressed"]

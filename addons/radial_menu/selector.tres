@@ -2,12 +2,14 @@
 
 [ext_resource path="res://addons/radial_menu/selector.shader" type="Shader" id=1]
 
-
 [resource]
 shader = ExtResource( 1 )
 shader_param/width_max = 1.0
-shader_param/width_min = 0.917
+shader_param/width_min = 0.478
 shader_param/cursor_deg = 0.4
 shader_param/cursor_size = 0.4
 shader_param/color_bg = Color( 0.4, 0.4, 0.4, 1 )
 shader_param/color_fg = Color( 0.17, 0.69, 1, 1 )
+shader_param/bevel_width = 0.198
+shader_param/bevel_enabled = true
+shader_param/bevel_color = Color( 1, 0, 0, 1 )

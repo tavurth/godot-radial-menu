@@ -11,6 +11,12 @@
         5.  [Cursor deg](#orge39ffb3)
         6.  [Color BG](#orgd8ac455)
         7.  [Color FG](#org4c1fc31)
+        8.  [Bevel Enabled](#bevel-enabled)
+        9.  [Bevel Color](#bevel-color)
+        10. [Bevel Width](#bevel-width)
+        11. [Modulate Enabled](#modulate-enabled)
+        12. [Modulate Color](#modulate-color)
+        13. [Modulate Width](#modulate-width)
 
 <a id="org654cb69"></a>
 
@@ -125,5 +131,57 @@ Background color of the radial (supports RGBA)
 `set_color_fg(Color)`
 
 Foreground color of the radial (supports RGBA)
+
+<a id="bevel-enabled"></a>
+
+### Bevel Enabled
+
+`set_bevel_enabled(bool)`
+
+Should a bevel be present on the edges of the modal
+
+<a id="bevel-color"></a>
+
+### Bevel Color
+
+`set_bevel_color(Color)`
+
+What color should the bevel be (if present)
+
+<a id="bevel-width"></a>
+
+### Bevel Width
+
+`set_bevel_width(float)`
+
+What should the width of the bevel be (if present)
+
+<a id="modulate-enabled"></a>
+
+### Modulate enabled
+
+`set_modulate_enabled(bool)`
+
+If enabled, buttons will be automatically modulated to the colors selected when hovered and unhovered
+
+<a id="modulate-hover"></a>
+
+### Modulate hover
+
+`set_modulate_hover(Color)`
+
+Color modulation to be applied to each button (or control) when it's hovered.
+This is only applied i `modulate_enabled` is true
+
+<a id="modulate-default"></a>
+
+### Modulate default
+
+`set_modulate_default(Color)`
+
+Color modulation to be applied to each button (or control) in it's default state.
+This is only applied i `modulate_enabled` is true
+
+## Support
 
 <a href="https://www.buymeacoffee.com/tavurth" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

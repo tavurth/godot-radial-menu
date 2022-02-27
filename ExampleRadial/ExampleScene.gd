@@ -1,8 +1,5 @@
 extends Control
 
-func _ready():
-	print($RadialMenu/TextureButton8)
-
 func _on_TextureButton_pressed():
 	print("A button was pressed")
 

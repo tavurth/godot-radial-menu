@@ -20,7 +20,7 @@ config/icon="res://ExampleRadial/icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "radial_menu" )
+enabled=PoolStringArray( "res://addons/radial_menu/plugin.cfg" )
 
 [input_devices]
 

@@ -176,7 +176,7 @@ func place_buttons():
 
 	var angle = -PI + PI / 4 # In radians
 	for button in buttons:
-		var size = button.get_size() / 1.5 * button.rect_scale
+		var size = button.get_size() / 3 * button.rect_scale
 
 		# Make sure our buttons are centered
 		button.rect_pivot_offset = button.get_size() / 2

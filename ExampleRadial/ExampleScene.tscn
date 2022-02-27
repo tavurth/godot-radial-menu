@@ -26,97 +26,104 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-width_min = 0.243
+width_max = 0.709
+width_min = 0.168
 bevel_width = 0.221
 bevel_enabled = true
 modulate_enabled = true
 
 [node name="FlipButton" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 327.011
-margin_top = 369.868
-margin_right = 363.011
-margin_bottom = 399.868
+margin_left = 339.442
+margin_top = 353.902
+margin_right = 375.442
+margin_bottom = 383.902
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18, 15 )
 focus_mode = 0
 icon = ExtResource( 1 )
 flat = true
 
 [node name="FlipButton2" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 385.274
-margin_top = 408.148
-margin_right = 421.274
-margin_bottom = 438.148
+margin_left = 388.561
+margin_top = 385.887
+margin_right = 424.561
+margin_bottom = 415.887
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18, 15 )
 focus_mode = 0
 icon = ExtResource( 1 )
 flat = true
 
 [node name="FlipButton3" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 454.0
-margin_top = 421.59
-margin_right = 490.0
-margin_bottom = 451.59
+margin_left = 446.518
+margin_top = 398.846
+margin_right = 482.518
+margin_bottom = 428.846
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18, 15 )
 focus_mode = 0
 icon = ExtResource( 1 )
 flat = true
 
 [node name="FlipButton4" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 522.726
-margin_top = 408.148
-margin_right = 558.727
-margin_bottom = 438.148
+margin_left = 505.485
+margin_top = 391.026
+margin_right = 541.486
+margin_bottom = 421.026
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18.0005, 15 )
 focus_mode = 0
 icon = ExtResource( 1 )
 flat = true
 
 [node name="VolumeButton" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 580.843
-margin_top = 369.722
-margin_right = 617.843
-margin_bottom = 400.722
+margin_left = 557.851
+margin_top = 364.011
+margin_right = 594.851
+margin_bottom = 395.011
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18.5, 15.5 )
 focus_mode = 0
 icon = ExtResource( 2 )
 flat = true
 
 [node name="VolumeButton2" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 619.881
-margin_top = 312.269
-margin_right = 656.881
-margin_bottom = 343.269
+margin_left = 596.2
+margin_top = 320.091
+margin_right = 633.2
+margin_bottom = 351.091
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18.5, 15.5 )
 focus_mode = 0
 icon = ExtResource( 2 )
 flat = true
 
 [node name="VolumeButton3" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 633.59
-margin_top = 244.5
-margin_right = 670.59
-margin_bottom = 275.5
+margin_left = 615.277
+margin_top = 265.962
+margin_right = 652.277
+margin_bottom = 296.962
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18.5, 15.5 )
 focus_mode = 0
 icon = ExtResource( 2 )
 flat = true
 
 [node name="VolumeButton4" type="Button" parent="RadialMenu"]
 modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 619.881
-margin_top = 176.731
-margin_right = 656.882
-margin_bottom = 207.731
-focus_mode = 0
-icon = ExtResource( 2 )
-flat = true
-
-[node name="VolumeButton5" type="Button" parent="RadialMenu"]
-modulate = Color( 0.713726, 0.713726, 0.713726, 1 )
-margin_left = 580.843
-margin_top = 119.278
-margin_right = 617.843
-margin_bottom = 150.278
+margin_left = 612.505
+margin_top = 208.934
+margin_right = 649.505
+margin_bottom = 239.934
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 18.5, 15.5 )
 focus_mode = 0
 icon = ExtResource( 2 )
 flat = true

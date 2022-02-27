@@ -31,7 +31,9 @@ I created this Radial Menu as an addon for a few of my projects.
 
 The rendering of the menu is primarily done through shader code and so should be pretty performant.
 
-![img](./ExampleRadial/Example.gif "img")
+
+https://user-images.githubusercontent.com/100964/155877983-19e00e16-59f6-494b-b484-f90e3cf67245.mov
+
 
 <a id="org2212cac"></a>
 

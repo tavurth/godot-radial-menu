@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-39cb6764056c22c08f04fdb46290f24e.stex"
+path="res://.import/icon.svg-2726698ae4c3a3a3f59b52550e83bcfd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/radial_menu/icon.png"
-dest_files=[ "res://.import/icon.png-39cb6764056c22c08f04fdb46290f24e.stex" ]
+source_file="res://addons/radial_menu/icon.svg"
+dest_files=[ "res://.import/icon.svg-2726698ae4c3a3a3f59b52550e83bcfd.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   viewBox="0 0 16 16"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <circle
+     style="fill:none;stroke:#a5efac;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
+     id="path865"
+     cx="8"
+     cy="8"
+     r="7" />
+  <path
+     style="fill:#a5efac;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
+     id="path865-2-6"
+     sodipodi:type="arc"
+     sodipodi:cx="8"
+     sodipodi:cy="8"
+     sodipodi:rx="5"
+     sodipodi:ry="5"
+     sodipodi:start="4.8869219"
+     sodipodi:end="6.1086524"
+     sodipodi:arc-type="slice"
+     d="m 8.8682409,3.0759612 a 5,5 0 0 1 4.0557981,4.055798 L 8,8 Z" />
+</svg>

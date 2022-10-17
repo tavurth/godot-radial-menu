@@ -260,8 +260,8 @@ func _on_hover(index: int):
 
 
 func _input(_event: InputEvent):
-	 var pos = $RadialMenu/CursorPos.cursor
-	 self.cursor_deg = atan2(pos.y, pos.x)
+	var pos = $RadialMenu/CursorPos.cursor
+	self.cursor_deg = atan2(pos.y, pos.x)
 
 
 func _init():
@@ -273,8 +273,8 @@ func _ready():
 	self.place_buttons()
 
 	var _e
-	_e = $RadialMenu/CursorPos.connect("hover",Callable(self,"_on_hover"))
-	_e = $RadialMenu/CursorPos.connect("selected",Callable(self,"_on_selected"))
+	_e = $RadialMenu/CursorPos.hover.connect(_on_hover)
+	_e = $RadialMenu/CursorPos.selected.connect(_on_selected)
 
 
 func _notification(what):

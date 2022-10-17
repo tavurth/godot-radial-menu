@@ -3,6 +3,7 @@
 *.log
 tmp/
 
+.godot
 .import
 *.tex
 *.pdf

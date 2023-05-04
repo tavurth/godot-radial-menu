@@ -6,21 +6,21 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-}
+_global_script_classes=[]
+_global_script_class_icons={}
 
 [application]
 
 config/name="godot-radial-menu"
 run/main_scene="res://ExampleRadial/ExampleScene.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://ExampleRadial/icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/radial_menu/plugin.cfg" )
+enabled=PackedStringArray("res://addons/radial_menu/plugin.cfg")
 
 [input_devices]
 
@@ -28,4 +28,4 @@ pointing/emulate_mouse_from_touch=false
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color(0, 0, 0, 1)

@@ -1,4 +1,4 @@
-tool
+@tool
 extends Container
 
 signal hovered(child)
@@ -6,24 +6,24 @@ signal selected(child)
 
 const MIN_WIDTH = 0.01
 
-export(PackedScene) var center_node setget set_center_node
+@export var center_node: PackedScene : set = set_center_node
 
-export(float, 0, 1) var width_max = 1.0 setget set_width_max;
-export(float, 0, 1) var width_min = 0.5 setget set_width_min;
+@export_range(0, 1, 0.01) var width_max: float = 1.0: set = set_width_max; # (float, 0, 1)
+@export_range(0, 1, 0.01) var width_min: float = 0.5: set = set_width_min; # (float, 0, 1)
 
-export(float, 0, 3.1416) var cursor_size = 0.4 setget set_cursor_size;
-export(float, -3.1416, 3.1416) var cursor_deg = 0.4 setget set_cursor_deg;
+@export_range(0, PI, 0.1) var cursor_size: float = 0.4: set = set_cursor_size; # (float, 0, 3.1416)
+@export var cursor_deg = 0.4: set = set_cursor_deg; # (float, -3.1416, 3.1416) # Use range when #41183 is solved
 
-export(Color, RGBA) var color_bg = Color("202431") setget set_color_bg;
-export(Color, RGBA) var color_fg = Color("595f70") setget set_color_fg;
+@export var color_bg: Color = Color("202431"): set = set_color_bg; # (Color, RGBA)
+@export var color_fg: Color = Color("595f70"): set = set_color_fg; # (Color, RGBA)
 
-export(float, 0, 1) var bevel_width = 0.5 setget set_bevel_width
-export(bool) var bevel_enabled = false setget set_bevel_enabled
-export(Color, RGBA) var bevel_color = Color("333a4f") setget set_bevel_color
+@export_range(0, 1, 0.01) var bevel_width: float = 0.5: set = set_bevel_width # (float, 0, 1)
+@export var bevel_enabled: bool = false: set = set_bevel_enabled
+@export var bevel_color: Color = Color("333a4f"): set = set_bevel_color # (Color, RGBA)
 
-export(bool) var modulate_enabled = false setget set_modulate_enabled
-export(Color, RGBA) var modulate_hover = Color.white setget set_modulate_hover
-export(Color, RGBA) var modulate_default = Color("b6b6b6") setget set_modulate_default
+@export var modulate_enabled: bool = false : set = set_modulate_enabled
+@export var modulate_hover: Color = Color.WHITE: set = set_modulate_hover # (Color, RGBA)
+@export var modulate_default: Color = Color("b6b6b6"): set = set_modulate_default # (Color, RGBA)
 
 
 func set_modulate_enabled(new_value: bool):
@@ -41,24 +41,24 @@ func set_modulate_default(new_value: Color):
 	self.do_modulate()
 
 
-func set_shader_param(name: String, new_value):
+func set_shader_parameter(name: String, new_value):
 	if not len(self.get_children()): return
-	$RadialMenu/Background.material.set_shader_param(name, new_value)
+	$RadialMenu/Background.material.set_shader_parameter(name, new_value)
 
 
 func set_bevel_enabled(new_value: bool):
 	bevel_enabled = new_value
-	set_shader_param("bevel_enabled", new_value)
+	set_shader_parameter("bevel_enabled", new_value)
 
 
 func set_bevel_color(new_value: Color):
 	bevel_color = new_value
-	set_shader_param("bevel_color", new_value)
+	set_shader_parameter("bevel_color", new_value)
 
 
 func set_bevel_width(new_value: float):
 	bevel_width = new_value
-	set_shader_param("bevel_width", new_value / 5.0)
+	set_shader_parameter("bevel_width", new_value / 5.0)
 
 
 func set_center_node(new_node: PackedScene = null):
@@ -73,14 +73,14 @@ func set_center_node(new_node: PackedScene = null):
 	if not new_node: 
 		return
 	
-	Menu.add_child(new_node.instance())
+	Menu.add_child(new_node.instantiate())
 
 
 func set_width_max(new_value: float):
 	if new_value - MIN_WIDTH < 0: return
 
 	width_max = new_value
-	self.set_shader_param("width_max", new_value)
+	self.set_shader_parameter("width_max", new_value)
 
 	# Handle case where we're now smaller than the minimum size
 	if new_value - width_min < MIN_WIDTH:
@@ -93,36 +93,36 @@ func set_width_min(new_value: float):
 	if new_value + MIN_WIDTH > 1: return
 
 	width_min = new_value
-	self.set_shader_param("width_min", new_value)
+	self.set_shader_parameter("width_min", new_value)
 
 	# Handle case where we're now bigger than the minimum size
 	if width_max - new_value < MIN_WIDTH:
 		self.set_width_max(new_value + MIN_WIDTH * 2)
 
 	var min_width = get_bounding_rect() * new_value
-	$RadialMenu/CenterNode.rect_min_size = Vector2(min_width, min_width)
+	$RadialMenu/CenterNode.custom_minimum_size = Vector2(min_width, min_width)
 
 	self.emit_signal("sort_children")
 
 
 func set_cursor_deg(new_value: float):
 	cursor_deg = new_value
-	self.set_shader_param("cursor_deg", new_value)
+	self.set_shader_parameter("cursor_deg", new_value)
 
 
 func set_cursor_size(new_value: float):
 	cursor_size = new_value
-	self.set_shader_param("cursor_size", new_value)
+	self.set_shader_parameter("cursor_size", new_value)
 
 
 func set_color_bg(new_value: Color):
 	color_bg = new_value
-	self.set_shader_param("color_bg", new_value)
+	self.set_shader_parameter("color_bg", new_value)
 
 
 func set_color_fg(new_value: Color):
 	color_fg = new_value
-	self.set_shader_param("color_fg", new_value)
+	self.set_shader_parameter("color_fg", new_value)
 
 
 func setup():
@@ -140,10 +140,10 @@ func setup():
 	self.set_width_max(width_max)
 	self.set_width_min(width_min)
 
-# We want to remove our own scene children
+# We want to remove_at our own scene children
 # so that we're only processing user added nodes
-func get_children():
-	var to_return = .get_children()
+func get_children(include_internal: bool = false):
+	var to_return = super.get_children(include_internal)
 
 	# Remove as many child nodes as we have for the RadialMenu
 	# the remaining array will be all user added children
@@ -159,7 +159,7 @@ func get_bounding_rect():
 
 #Repositions the buttons
 func place_buttons():
-	var buttons = get_children()
+	var buttons = self.get_children()
 	if not len(buttons): return
 
 	var angle_increment = (2 * PI) / len(buttons)
@@ -176,10 +176,10 @@ func place_buttons():
 
 	var angle = -PI + PI / 4 # In radians
 	for button in buttons:
-		var size = button.get_size() / 3 * button.rect_scale
+		var size = button.get_size() / 3 * button.scale
 
 		# Make sure our buttons are centered
-		button.rect_pivot_offset = button.get_size() / 2
+		button.pivot_offset = button.get_size() / 2
 
 		# Handle edge case where the radial is very thin
 		if width < size.x: size.x = 0
@@ -220,12 +220,12 @@ func _on_sort_children():
 	$RadialMenu/Background.set_pivot_offset(Vector2(min_size / 2, min_size / 2))
 
 	# Tell our cursor how many can be selected
-	if not Engine.editor_hint:
+	if not Engine.is_editor_hint():
 		$RadialMenu/CursorPos.set_count(len(self.get_children()))
 
 
 func do_modulate(hovered: Node = null):
-	var default_color = Color.white
+	var default_color = Color.WHITE
 
 	if self.modulate_enabled:
 		default_color = modulate_default
@@ -238,7 +238,7 @@ func do_modulate(hovered: Node = null):
 
 
 func _on_selected(index: int):
-	var child = get_children()[index]
+	var child = self.get_children()[index]
 
 	if child is BaseButton:
 		child.set_pressed(true)
@@ -251,7 +251,7 @@ func _on_selected(index: int):
 
 
 func _on_hover(index: int):
-	var child = get_children()[index]
+	var child = self.get_children()[index]
 
 	self.emit_signal("hovered", child)
 
@@ -260,12 +260,12 @@ func _on_hover(index: int):
 
 
 func _input(_event: InputEvent):
-	 var pos = $RadialMenu/CursorPos.cursor
-	 self.cursor_deg = atan2(pos.y, pos.x)
+	var pos = $RadialMenu/CursorPos.cursor
+	self.cursor_deg = atan2(pos.y, pos.x)
 
 
 func _init():
-	self.add_child(preload("./RadialMenu.tscn").instance())
+	self.add_child(preload("./RadialMenu.tscn").instantiate())
 
 
 func _ready():
@@ -273,8 +273,8 @@ func _ready():
 	self.place_buttons()
 
 	var _e
-	_e = $RadialMenu/CursorPos.connect("hover", self, "_on_hover")
-	_e = $RadialMenu/CursorPos.connect("selected", self, "_on_selected")
+	_e = $RadialMenu/CursorPos.hover.connect(_on_hover)
+	_e = $RadialMenu/CursorPos.selected.connect(_on_selected)
 
 
 func _notification(what):

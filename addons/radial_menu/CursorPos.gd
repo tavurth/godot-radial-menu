@@ -13,7 +13,7 @@ func set_count(new_count: int):
 	self.count = new_count
 
 
-func get_index():
+func get_cursor_index():
 	if not self.count: return 0
 
 	var normalized_cursor = cursor.normalized()
@@ -24,7 +24,7 @@ func get_index():
 	var index_offset = (2 * PI) / self.count
 
 	# Calculate the angle as a percentage of the entire circle
-	# divided up into equal sized arcs based on the number of items (count)
+	# divided up into equal sized arcs based checked the number of items (count)
 	var to_return = angle / index_offset
 
 	# Clip to the min-max of our array of buttons
@@ -34,7 +34,7 @@ func get_index():
 
 
 func compute_index():
-	var current_index = self.get_index()
+	var current_index = self.get_cursor_index()
 	if current_index == self.last_index:
 		return
 
@@ -53,7 +53,7 @@ func touch_end(_event: InputEventScreenTouch):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
-		self.emit_signal("selected", self.get_index())
+		self.emit_signal("selected", self.get_cursor_index())
 
 
 func touch_drag(event: InputEventScreenDrag):
@@ -74,7 +74,7 @@ func mouse_end(_event: InputEventMouseButton):
 	touches -= 1
 	if touches <= 0:
 		touches = 0
-		self.emit_signal("selected", self.get_index())
+		self.emit_signal("selected", self.get_cursor_index())
 
 
 func mouse_drag(_event: InputEventMouseMotion = null):

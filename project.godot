@@ -8,9 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[]
-_global_script_class_icons={}
-
 [application]
 
 config/name="godot-radial-menu"
@@ -28,4 +25,5 @@ pointing/emulate_mouse_from_touch=false
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 environment/default_clear_color=Color(0, 0, 0, 1)

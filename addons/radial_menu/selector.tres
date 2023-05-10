@@ -1,15 +1,15 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cxrukx4vto81h"]
 
-[ext_resource path="res://addons/radial_menu/selector.gdshader" type="Shader" id=1]
+[ext_resource type="Shader" path="res://addons/radial_menu/selector.gdshader" id="1"]
 
 [resource]
-shader = ExtResource( 1 )
-shader_param/width_max = 1.0
-shader_param/width_min = 0.478
-shader_param/cursor_deg = 0.4
-shader_param/cursor_size = 0.4
-shader_param/color_bg = Color( 0.4, 0.4, 0.4, 1 )
-shader_param/color_fg = Color( 0.17, 0.69, 1, 1 )
-shader_param/bevel_width = 0.198
-shader_param/bevel_enabled = true
-shader_param/bevel_color = Color( 1, 0, 0, 1 )
+shader = ExtResource("1")
+shader_parameter/width_max = 1.0
+shader_parameter/width_min = 0.5
+shader_parameter/cursor_deg = 0.4
+shader_parameter/cursor_size = 0.4
+shader_parameter/color_bg = Color(0.12549, 0.141176, 0.192157, 1)
+shader_parameter/color_fg = Color(0.34902, 0.372549, 0.439216, 1)
+shader_parameter/bevel_width = 0.0334
+shader_parameter/bevel_enabled = false
+shader_parameter/bevel_color = Color(0.2, 0.227451, 0.309804, 1)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp10l18ehlv1b"]
+[gd_scene load_steps=4 format=3 uid="uid://dp10l18ehlv1b"]
 
 [ext_resource type="Texture2D" uid="uid://cqfpatebwql8i" path="res://ExampleRadial/icons/flip.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://c20y0j00t7tug" path="res://ExampleRadial/icons/volume.png" id="2"]
 [ext_resource type="Script" path="res://ExampleRadial/ExampleScene.gd" id="3"]
 [ext_resource type="Script" path="res://addons/radial_menu/RadialMenu.gd" id="4"]
 
@@ -26,6 +25,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton2" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -33,6 +33,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton3" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -40,6 +41,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton4" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -47,31 +49,4 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
-
-[node name="VolumeButton" type="Button" parent="RadialMenu"]
-modulate = Color(0.227451, 0.227451, 0.227451, 1)
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("2")
-flat = true
-
-[node name="VolumeButton2" type="Button" parent="RadialMenu"]
-modulate = Color(0.227451, 0.227451, 0.227451, 1)
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("2")
-flat = true
-
-[node name="VolumeButton3" type="Button" parent="RadialMenu"]
-modulate = Color(0.227451, 0.227451, 0.227451, 1)
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("2")
-flat = true
-
-[node name="VolumeButton4" type="Button" parent="RadialMenu"]
-modulate = Color(0.227451, 0.227451, 0.227451, 1)
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("2")
-flat = true
+icon_alignment = 1

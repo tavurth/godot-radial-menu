@@ -17,7 +17,7 @@ func get_cursor_index():
 	if not self.count: return 0
 
 	var normalized_cursor = cursor.normalized()
-	var angle = PI - atan2(normalized_cursor.y, normalized_cursor.x)
+	var angle = Vector2.ZERO.angle_to_point(normalized_cursor)
 
 	# Whole circle in radians divided by the number of items
 	# will give us the radian step of each item
@@ -28,7 +28,7 @@ func get_cursor_index():
 	var to_return = angle / index_offset
 
 	# Clip to the min-max of our array of buttons
-	to_return = clamp(to_return - 1, 0, self.count - 1)
+	to_return = min(to_return, self.count - 1)
 
 	return round(to_return)
 

@@ -6,7 +6,10 @@ signal selected(child)
 
 const MIN_WIDTH = 0.01
 
+var CursorPos: Node2D
 @export var center_node: PackedScene : set = set_center_node
+
+@export var snapped: bool = false: set = set_snapped
 
 @export_range(0, 1, 0.01) var width_max: float = 1.0: set = set_width_max; # (float, 0, 1)
 @export_range(0, 1, 0.01) var width_min: float = 0.5: set = set_width_min; # (float, 0, 1)
@@ -49,6 +52,11 @@ func set_shader_parameter(name: String, new_value):
 func set_bevel_enabled(new_value: bool):
 	bevel_enabled = new_value
 	set_shader_parameter("bevel_enabled", new_value)
+
+
+func set_snapped(new_value: bool):
+	snapped = new_value
+	set_shader_parameter("snapped", new_value)
 
 
 func set_bevel_color(new_value: Color):
@@ -99,15 +107,19 @@ func set_width_min(new_value: float):
 	if width_max - new_value < MIN_WIDTH:
 		self.set_width_max(new_value + MIN_WIDTH * 2)
 
-	var min_width = get_bounding_rect() * new_value
+	var min_width = get_min_size() * new_value
 	$RadialMenu/CenterNode.custom_minimum_size = Vector2(min_width, min_width)
 
 	self.emit_signal("sort_children")
 
 
 func set_cursor_deg(new_value: float):
-	cursor_deg = new_value
-	self.set_shader_parameter("cursor_deg", new_value)
+	if snapped:
+		cursor_deg = snapped(new_value, $RadialMenu/CursorPos.get_index_offset())
+	else:
+		cursor_deg = new_value
+
+	self.set_shader_parameter("cursor_deg", cursor_deg)
 
 
 func set_cursor_size(new_value: float):
@@ -152,7 +164,7 @@ func get_children(include_internal: bool = false):
 	return to_return
 
 
-func get_bounding_rect():
+func get_min_size():
 	var size = self.get_size()
 	return min(size.x, size.y)
 
@@ -163,33 +175,23 @@ func place_buttons():
 	if not len(buttons): return
 
 	var angle_increment = (2 * PI) / len(buttons)
-	var center = self.get_size() / 2
-	center.y *= -1
+	var center = self.get_rect().size / 2
 
-	var rect = self.get_bounding_rect() / 2
+	var rect = self.get_rect()
+	var min_size = self.get_min_size()
+	var min_vec = Vector2(min_size, min_size)
 
-	var max_size = rect * self.width_max
-	var min_size = rect * self.width_min
-
-	var width = max_size - min_size
-	var half_size = min_size + width / 2
-
-	var angle = -PI + PI / 4 # In radians
+	var angle = 0
 	for button in buttons:
-		var size = button.get_size() / 3 * button.scale
+		var corner_pos = Vector2.ZERO.from_angle(angle)
+		corner_pos *= min_vec / 2
 
-		# Make sure our buttons are centered
-		button.pivot_offset = button.get_size() / 2
+		if min_vec.length_squared() > 0:
+			corner_pos *= Vector2.ONE - (button.get_size() / min_vec) * 3
 
-		# Handle edge case where the radial is very thin
-		if width < size.x: size.x = 0
-		if width < size.y: size.y = 0
+		corner_pos -= button.get_size() / 2
+		corner_pos += center
 
-		#calculate the x and y positions for the button at that angle
-		var x = center.x + cos(angle) * (half_size + size.x)
-		var y = center.y + sin(angle) * (half_size + size.y)
-
-		var corner_pos = Vector2(x, -y) - (button.get_size() / 2)
 		button.set_position(corner_pos)
 
 		#Advance to next angle position
@@ -200,6 +202,7 @@ func place_buttons():
 
 	self.do_modulate()
 
+
 func add_button(btn):
 	self.add_child(btn)
 	self.place_buttons()
@@ -208,7 +211,7 @@ func add_button(btn):
 func _on_sort_children():
 	self.place_buttons()
 
-	var min_size = self.get_bounding_rect()
+	var min_size = self.get_min_size()
 
 	$RadialMenu.anchor_left = ANCHOR_BEGIN
 	$RadialMenu.anchor_top = ANCHOR_BEGIN

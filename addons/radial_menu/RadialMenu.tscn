@@ -1,41 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dbdklljsgfj74"]
 
-[ext_resource path="res://addons/radial_menu/selector.tres" type="Material" id=1]
-[ext_resource path="res://addons/radial_menu/CursorPos.gd" type="Script" id=2]
+[ext_resource type="Material" uid="uid://cxrukx4vto81h" path="res://addons/radial_menu/selector.tres" id="1"]
+[ext_resource type="Script" path="res://addons/radial_menu/CursorPos.gd" id="2"]
 
 [node name="RadialMenu" type="CenterContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CursorPos" type="Control" parent="."]
-offset_left = 512.0
-offset_top = 256.0
-offset_right = 512.0
-offset_bottom = 256.0
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+script = ExtResource("2")
 
 [node name="Background" type="ColorRect" parent="."]
-material = ExtResource( 1 )
-offset_left = 512.0
-offset_top = 256.0
-offset_right = 512.0
-offset_bottom = 256.0
-pivot_offset = Vector2( 256, 256 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+material = ExtResource("1")
+layout_mode = 2
 
 [node name="CenterNode" type="CenterContainer" parent="."]
-offset_left = 492.0
-offset_top = 236.0
-offset_right = 532.0
-offset_bottom = 276.0
-minimum_size = Vector2( 40, 40 )
+layout_mode = 2

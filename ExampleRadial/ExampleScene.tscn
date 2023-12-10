@@ -16,6 +16,7 @@ script = ExtResource("3")
 [node name="RadialMenu" type="Container" parent="."]
 layout_mode = 2
 script = ExtResource("4")
+snapped = true
 bevel_width = 0.167
 modulate_enabled = true
 modulate_default = Color(0.227451, 0.227451, 0.227451, 1)
@@ -26,6 +27,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton2" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -33,6 +35,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton3" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -40,6 +43,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="FlipButton4" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -47,6 +51,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("1")
 flat = true
+icon_alignment = 1
 
 [node name="VolumeButton" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -54,6 +59,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("2")
 flat = true
+icon_alignment = 1
 
 [node name="VolumeButton2" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -61,6 +67,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("2")
 flat = true
+icon_alignment = 1
 
 [node name="VolumeButton3" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -68,6 +75,7 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("2")
 flat = true
+icon_alignment = 1
 
 [node name="VolumeButton4" type="Button" parent="RadialMenu"]
 modulate = Color(0.227451, 0.227451, 0.227451, 1)
@@ -75,3 +83,22 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("2")
 flat = true
+icon_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="RadialMenu"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="RadialMenu"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="RadialMenu"]
+modulate = Color(0.227451, 0.227451, 0.227451, 1)
+custom_minimum_size = Vector2(33, 33)
+layout_mode = 2
+
+[connection signal="hovered" from="RadialMenu" to="." method="_on_radial_menu_hovered"]
+[connection signal="selected" from="RadialMenu" to="." method="_on_radial_menu_selected"]

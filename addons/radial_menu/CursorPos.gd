@@ -13,19 +13,21 @@ func set_count(new_count: int):
 	self.count = new_count
 
 
+func get_index_offset() -> float:
+	# Whole circle in radians divided by the number of items
+	# will give us the radian step of each item
+	return (2 * PI) / self.count
+
+
 func get_cursor_index():
 	if not self.count: return 0
 
 	var normalized_cursor = cursor.normalized()
 	var angle = Vector2.ZERO.angle_to_point(normalized_cursor)
 
-	# Whole circle in radians divided by the number of items
-	# will give us the radian step of each item
-	var index_offset = (2 * PI) / self.count
-
 	# Calculate the angle as a percentage of the entire circle
 	# divided up into equal sized arcs based checked the number of items (count)
-	var to_return = angle / index_offset
+	var to_return = angle / get_index_offset()
 
 	# Clip to the min-max of our array of buttons
 	to_return = min(to_return, self.count - 1)

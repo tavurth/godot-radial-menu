@@ -33,7 +33,6 @@ The rendering of the menu is primarily done through shader code and so should be
 
 https://user-images.githubusercontent.com/100964/155878180-1aabfeb7-f246-46c4-b6a6-e60346d8279c.mov
 
-
 <a id="org2212cac"></a>
 
 ## Setup
@@ -65,6 +64,12 @@ https://user-images.githubusercontent.com/100964/155878180-1aabfeb7-f246-46c4-b6
 ![img](./ExampleRadial/Controls.png "img")
 
 <a id="orged0e028"></a>
+
+### Snapped
+
+`set_snapped(true | false)`
+
+Should the cursor snap to the individual buttons?
 
 ### Center Node
 

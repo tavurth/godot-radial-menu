@@ -6,7 +6,10 @@ signal selected(child)
 
 const MIN_WIDTH = 0.01
 
+var CursorPos: Node2D
 @export var center_node: PackedScene : set = set_center_node
+
+@export var snapped: bool = false: set = set_snapped
 
 @export_range(0, 1, 0.01) var width_max: float = 1.0: set = set_width_max; # (float, 0, 1)
 @export_range(0, 1, 0.01) var width_min: float = 0.5: set = set_width_min; # (float, 0, 1)
@@ -49,6 +52,11 @@ func set_shader_parameter(name: String, new_value):
 func set_bevel_enabled(new_value: bool):
 	bevel_enabled = new_value
 	set_shader_parameter("bevel_enabled", new_value)
+
+
+func set_snapped(new_value: bool):
+	snapped = new_value
+	set_shader_parameter("snapped", new_value)
 
 
 func set_bevel_color(new_value: Color):
@@ -106,8 +114,12 @@ func set_width_min(new_value: float):
 
 
 func set_cursor_deg(new_value: float):
-	cursor_deg = new_value
-	self.set_shader_parameter("cursor_deg", new_value)
+	if snapped:
+		cursor_deg = snapped(new_value, $RadialMenu/CursorPos.get_index_offset())
+	else:
+		cursor_deg = new_value
+
+	self.set_shader_parameter("cursor_deg", cursor_deg)
 
 
 func set_cursor_size(new_value: float):
@@ -189,6 +201,7 @@ func place_buttons():
 		button.set_focus_mode(BaseButton.FOCUS_NONE)
 
 	self.do_modulate()
+
 
 func add_button(btn):
 	self.add_child(btn)

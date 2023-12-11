@@ -16,7 +16,9 @@ script = ExtResource("3")
 [node name="RadialMenu" type="Container" parent="."]
 layout_mode = 2
 script = ExtResource("4")
-snapped = true
+snap = true
+snap_time = 0.3
+snap_transition = 11
 bevel_width = 0.167
 modulate_enabled = true
 modulate_default = Color(0.227451, 0.227451, 0.227451, 1)

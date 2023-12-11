@@ -67,7 +67,7 @@ https://user-images.githubusercontent.com/100964/155878180-1aabfeb7-f246-46c4-b6
 
 ### Snapped
 
-`set_snapped(true | false)`
+`set_snap_enabled(true | false)`
 
 Should the cursor snap to the individual buttons?
 
